@@ -31,6 +31,21 @@ public class CredentialsController {
 		return credentials;
 	}
 	
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public void update(@PathVariable Long id, @RequestBody Credentials credentials) {
+		Credentials cred = credentialsService.findOne(id);
+	    if (cred != null) {
+	        cred.setAuthority(credentials.getAuthority());
+	        cred.setEnabled(credentials.getEnabled());
+	        cred.setPassword(credentials.getPassword());
+	        cred.setTeamMember(credentials.getTeamMember());
+	        cred.setUsername(credentials.getUsername());
+	        cred.setVerifyPassword(credentials.getVerifyPassword());
+	    } else {
+	        credentialsService.save(credentials);
+	        System.out.println("Credentials successfully edited!");
+	    }
+	}
 
 //	@RequestMapping(value = "/add", method = RequestMethod.POST)
 //	@ResponseStatus(value = HttpStatus.NO_CONTENT)

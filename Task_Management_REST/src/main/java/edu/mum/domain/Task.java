@@ -18,6 +18,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "TASK")
 public class Task {
@@ -53,7 +55,12 @@ public class Task {
 
 	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private TeamMember teamMember;
-
+	
+	
+//	@ManyToOne(fetch=FetchType.EAGER)
+//    @JoinColumn (name="project_id") 
+////	@JsonBackReference()
+//  	private Project  project;
 	
 	public Task() {
 

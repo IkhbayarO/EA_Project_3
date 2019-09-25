@@ -22,6 +22,11 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 
 @Entity
 @Table(name = "PROJECT")
@@ -51,13 +56,14 @@ public class Project {
 	private Date endDate;
 	
 
-	
+
 	@OneToMany
-	@JoinColumn(name="project_id", referencedColumnName = "id")
+	@JoinColumn(name = "project_id", referencedColumnName = "id")
 	private List<Task> tasks=new ArrayList<Task>();
 	
 	
 	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy="project") //new fix
+	@JsonIgnoreProperties(value = "project")
 	private  Team team;
 
 	

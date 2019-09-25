@@ -27,4 +27,5 @@ public class ProjectDaoImp extends GenericDaoImp<Project> implements ProjectDao 
 		return this.findAll();
 
 	}
+	
 }

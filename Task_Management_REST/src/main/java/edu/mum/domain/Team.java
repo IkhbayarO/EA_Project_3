@@ -14,6 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "TEAM")
 public class Team {
@@ -29,6 +31,7 @@ public class Team {
 	private List<TeamMember> members=new ArrayList<TeamMember>();
 
 	@OneToOne
+	@JsonIgnoreProperties(value = "team")
 	private Project project;
 
 	public Team(String teamName, List<TeamMember> members, Project project) {
