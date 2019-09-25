@@ -1,25 +1,20 @@
+
+INSERT INTO `credentials`(id, enabled, password, username, verifyPassword) VALUES (1,NULL,'123456','admin','123456');
+INSERT INTO `credentials`(id, enabled, password, username, verifyPassword) VALUES (2,NULL,'123456','user','123456');
+
+INSERT INTO `authority`(id, authority, username, credentials_id) VALUES (1,'ADMIN','admin',1);
+INSERT INTO `authority`(id, authority, username, credentials_id) VALUES (2,'USER','user',2);
+
+INSERT INTO `project`(id, description, endDate, startDate, title) VALUES (1,'This is a project','2014-01-01','2011-02-02','Project');
+
+INSERT INTO `team`(id, teamName, project_id) VALUES (1,'Code Strikers',1);
+
+
+INSERT INTO `team_member`(id, email, firstName, lastName, credentials_id, team_id) VALUES (1,'john@gmail.com','John','Soe',1,1);
+
+
+INSERT INTO `task`(id, description, endTime, startTime, status, taskName, version, teamMember_id, project_id) VALUES (1,'This is a taks 1','2014-01-01','2011-01-01','Open','UI Design',1,1,1);
+
  
-INSERT INTO credentials(username,password,enabled) VALUES ('guest','guest', TRUE);
-INSERT INTO credentials(username,password,enabled) VALUES ('admin','admin', TRUE);
- 
-INSERT INTO authority (id,username, authority) VALUES (1,'guest', 'ROLE_USER');
-INSERT INTO authority (id,username, authority) VALUES (2,'admin', 'ROLE_ADMIN');
-INSERT INTO authority (id,username, authority) VALUES (3,'admin', 'ROLE_USER');
-
-INSERT INTO  `MEMBR` (id,firstname, lastname,age,title,membernumber, member_id) VALUES (1,'Curious','George',12,'Boy Monkey', 8754,'admin');
-INSERT INTO `MEMBR` (id,firstname, lastname,age,title,membernumber,member_id) VALUES (2,'Allen','Rench',123,'Torque Master', 8733,'guest');
-
-INSERT INTO `ADDRESS` (id,city,state,street,member_id) VALUES (1,'Fairfield','Iowa','Main','1');
-INSERT INTO `ADDRESS` (id,city,state,street,member_id) VALUES (2,'Batavia','Iowa','Maple','2');
-INSERT INTO `ADDRESS` (id,city,state,street,member_id) VALUES (3,'Ottumwa','Iowa','Maple','2');
-
-INSERT INTO product(id,name,price, description) VALUES (1,"Sail Boat",22.0, "Sails");
-INSERT INTO product(id,name,price, description) VALUES (2,"Toy Boat",22.0, "floats");
- 
-INSERT INTO category(id,name,description) VALUES (1,"Boats", "They Float"); 
-INSERT INTO category(id,name,description) VALUES (2,"Sports", "They Play");
-
-INSERT INTO Category_Product(Category_ID,Product_ID) VALUES (1,1);  
-INSERT INTO Category_Product(Category_ID,Product_ID) VALUES (2,1); 
  
   					
