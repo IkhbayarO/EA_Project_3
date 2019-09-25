@@ -29,7 +29,7 @@ public class ProjectController {
 		return projectService.findOne(id);
 	}
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public void update(@PathVariable Long id, @RequestBody Project project) {
+	public void update(@PathVariable("id") Long id, @RequestBody Project project) {
 		Project proj = projectService.findOne(id);
 	    if (proj != null) {
 	    	proj.setDescription(project.getDescription());
