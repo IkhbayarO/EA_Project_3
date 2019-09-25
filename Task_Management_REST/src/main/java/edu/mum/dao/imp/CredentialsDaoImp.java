@@ -25,5 +25,5 @@ public class CredentialsDaoImp extends GenericDaoImp<Credentials> implements Cre
 
 	}
 	
-
+	
 }
