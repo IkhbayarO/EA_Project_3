@@ -57,7 +57,7 @@ public class Project {
 	
 
 
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "project_id", referencedColumnName = "id")
 	private List<Task> tasks=new ArrayList<Task>();
 	

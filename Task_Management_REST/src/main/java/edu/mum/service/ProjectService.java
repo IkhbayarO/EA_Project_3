@@ -12,4 +12,5 @@ public interface ProjectService {
 	public void update(Project project);
 	public Project findOne(Long id);
 	public Project findByProjectTitle(String title);
+	public void delete(Long id);
 }

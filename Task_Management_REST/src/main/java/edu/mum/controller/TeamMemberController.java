@@ -10,7 +10,7 @@ import edu.mum.domain.TeamMember;
 import edu.mum.service.TeamMemberService;
 
 @RestController
-@RequestMapping("/teamMembers")
+@RequestMapping("/teammembers")
 public class TeamMemberController {
 	@Autowired
 	TeamMemberService memberService;

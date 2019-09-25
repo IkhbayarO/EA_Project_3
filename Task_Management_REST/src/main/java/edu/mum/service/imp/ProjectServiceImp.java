@@ -43,4 +43,10 @@ public class ProjectServiceImp implements ProjectService {
 		return projectDao.findByProjectTitle(title);
 	}
 
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		projectDao.delete(id);
+	}
+
 }

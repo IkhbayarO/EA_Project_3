@@ -34,14 +34,13 @@ public class TeamMember {
 	
 	@Email
 	private String email;
-	
-	
+
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "teamMember")
 	private List<Task> tasks=new ArrayList<Task>();
 	
 	
 
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Team team;
 	
 	@Valid

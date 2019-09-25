@@ -53,14 +53,10 @@ public class Task {
 	private String description;
 	
 
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@ManyToOne(cascade = CascadeType.ALL)
 	private TeamMember teamMember;
 	
 	
-//	@ManyToOne(fetch=FetchType.EAGER)
-//    @JoinColumn (name="project_id") 
-////	@JsonBackReference()
-//  	private Project  project;
 	
 	public Task() {
 
