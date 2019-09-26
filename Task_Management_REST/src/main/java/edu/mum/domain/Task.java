@@ -156,6 +156,10 @@ public class Task {
 		this.teamMember = teamMember;
 	}
 
+
+	public Long getId() {
+		return id;
+	}
 	
 	
 }

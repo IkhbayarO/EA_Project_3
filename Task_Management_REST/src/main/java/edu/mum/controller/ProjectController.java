@@ -11,14 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.mum.domain.Credentials;
 import edu.mum.domain.Project;
+import edu.mum.domain.Task;
 import edu.mum.domain.Team;
 import edu.mum.service.ProjectService;
+import edu.mum.service.TaskService;
+import edu.mum.service.TeamService;
 
 @RestController
 @RequestMapping("/projects")
 public class ProjectController {
 	@Autowired
 	ProjectService projectService;
+	@Autowired
+	TeamService teamService;
+	@Autowired
+	TaskService taskService;
 	
 	@RequestMapping("")
 	public List<Project> getAll(){
@@ -57,6 +64,21 @@ public class ProjectController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public void add(@RequestBody Project project) {
+//		Team team=project.getTeam();
+//		List<Task> tasks=project.getTasks();
+//		
+//		Team checkTeam=teamService.findOne(team.getId());
+//		
+//		if(checkTeam!=null) {
+//			checkTeam.setProject(project);
+//			teamService.save(checkTeam);
+//			System.out.println("Existing team saved successfully with this project");
+//		}else {
+//			team.setProject(project);
+//			teamService.save(team);
+//			System.out.println("Team saved successfully with this project");
+//		}
+		
 		projectService.save(project);
 		System.out.println("Project successfully added!");
 	}

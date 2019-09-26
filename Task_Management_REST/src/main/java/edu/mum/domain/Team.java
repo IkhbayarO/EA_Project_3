@@ -75,4 +75,9 @@ public class Team {
 		this.project = project;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	
 }

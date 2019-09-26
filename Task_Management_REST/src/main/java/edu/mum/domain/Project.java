@@ -86,7 +86,14 @@ public class Project {
 	}
 
 
-
+	public Project(String title, String description, Date startDate, Date endDate,  Team team) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.team = team;
+	}
 
 	public Project(String title, String description, Date startDate, Date endDate, List<Task> tasks) {
 		super();
