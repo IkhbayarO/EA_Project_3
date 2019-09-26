@@ -35,6 +35,8 @@ public class ProjectController {
 	public Project getProject(@PathVariable("id") Long id) {
 		return projectService.findOne(id);
 	}
+	
+	//ask from professor
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public void update(@PathVariable("id") Long id, @RequestBody Project project) {
 		Project proj = projectService.findOne(id);
@@ -43,6 +45,7 @@ public class ProjectController {
 	    	proj.setEndDate(project.getEndDate());
 	    	proj.setStartDate(project.getStartDate());
 	    	proj.setTitle(project.getTitle());
+	    	project=proj;
 	    	projectService.delete(id);
 	    	projectService.save(project);
 	    	System.out.println("Updated successully!");
