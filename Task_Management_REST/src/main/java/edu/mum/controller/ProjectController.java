@@ -38,6 +38,8 @@ public class ProjectController {
 	    	proj.setTasks(project.getTasks());
 	    	proj.setTeam(project.getTeam());
 	    	proj.setTitle(project.getTitle());
+	    	projectService.save(proj);
+	    	System.out.println("Updated successully!");
 	    } else {
 	        projectService.save(project);
 	        System.out.println("Credentials successfully edited!");
