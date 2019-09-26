@@ -42,10 +42,9 @@ public class ProjectController {
 	    	proj.setDescription(project.getDescription());
 	    	proj.setEndDate(project.getEndDate());
 	    	proj.setStartDate(project.getStartDate());
-	    	proj.setTasks(project.getTasks());
-	    	proj.setTeam(project.getTeam());
 	    	proj.setTitle(project.getTitle());
-	    	projectService.save(proj);
+	    	projectService.delete(id);
+	    	projectService.save(project);
 	    	System.out.println("Updated successully!");
 	    } else {
 	        projectService.save(project);
@@ -64,20 +63,6 @@ public class ProjectController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public void add(@RequestBody Project project) {
-//		Team team=project.getTeam();
-//		List<Task> tasks=project.getTasks();
-//		
-//		Team checkTeam=teamService.findOne(team.getId());
-//		
-//		if(checkTeam!=null) {
-//			checkTeam.setProject(project);
-//			teamService.save(checkTeam);
-//			System.out.println("Existing team saved successfully with this project");
-//		}else {
-//			team.setProject(project);
-//			teamService.save(team);
-//			System.out.println("Team saved successfully with this project");
-//		}
 		
 		projectService.save(project);
 		System.out.println("Project successfully added!");
