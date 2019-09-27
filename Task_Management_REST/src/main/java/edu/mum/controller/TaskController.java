@@ -13,6 +13,7 @@ import edu.mum.service.TaskService;
 
 @RestController
 @RequestMapping("/tasks")
+//@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
 public class TaskController {
 	
 	@Autowired

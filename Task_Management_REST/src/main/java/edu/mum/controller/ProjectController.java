@@ -3,6 +3,7 @@ package edu.mum.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import edu.mum.service.TeamService;
 
 @RestController
 @RequestMapping("/projects")
+//@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
 public class ProjectController {
 	@Autowired
 	ProjectService projectService;
@@ -41,17 +43,11 @@ public class ProjectController {
 	public void update(@PathVariable("id") Long id, @RequestBody Project project) {
 		Project proj = projectService.findOne(id);
 	    if (proj != null) {
-	    	proj.setDescription(project.getDescription());
-	    	proj.setEndDate(project.getEndDate());
-	    	proj.setStartDate(project.getStartDate());
-	    	proj.setTitle(project.getTitle());
-	    	project=proj;
-	    	projectService.delete(id);
+	    	project.setId(id);
 	    	projectService.save(project);
 	    	System.out.println("Updated successully!");
 	    } else {
-	        projectService.save(project);
-	        System.out.println("Credentials successfully edited!");
+	        System.out.println("There is no data with this id!");
 	    }
 	}
 	

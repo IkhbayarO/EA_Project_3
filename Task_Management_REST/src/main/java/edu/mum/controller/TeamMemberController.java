@@ -11,6 +11,7 @@ import edu.mum.service.TeamMemberService;
 
 @RestController
 @RequestMapping("/teammembers")
+//@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
 public class TeamMemberController {
 	@Autowired
 	TeamMemberService memberService;

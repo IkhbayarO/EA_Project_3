@@ -187,6 +187,20 @@ public class Project {
 	public void setTeam(Team team) {
 		this.team = team;
 	}
+
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 	
 }

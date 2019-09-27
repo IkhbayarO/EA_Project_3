@@ -16,6 +16,7 @@ import edu.mum.service.CredentialsService;
 
 @RestController
 @RequestMapping("/credentials")
+//@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
 public class CredentialsController {
 	@Autowired
 	CredentialsService credentialsService;
